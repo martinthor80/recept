@@ -12,41 +12,50 @@ body {
     margin: 0 auto;
 }
 
-/* Den vita samlingsboxen för recepten – nu med städad padding */
+/* VIKTIGT: Denna tar helt bort den fula, stora vita ytterboxen */
 .recipes-section {
-    background-color: #ffffff !important;
-    border-radius: 16px !important;
-    padding: 12px !important; /* Minimal padding så hover-balken kan sträcka sig ut */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
     margin-top: 20px;
 }
 
-/* Varje enskild receptrad – rejäl och tydlig */
-.recipe-list li {
+/* Denna rensar bort list-prickar och marginaler runt listan */
+.recipe-list {
     list-style: none !important;
-    margin: 6px 0 !important;
-    padding: 16px 20px !important; /* Ger en fyllig och lagom hög hover-balk */
-    border-radius: 10px;
-    transition: background-color 0.2s ease;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
-/* När man håller musen över ett recept i listan */
+/* HÄR ÄR DITT KORT! Denna styr storleken, färgen och formen på receptraden */
+.recipe-list li {
+    background-color: #ffffff !important; /* Gör själva raden vit */
+    border-radius: 12px !important;       /* Snygga runda hörn */
+    padding: 18px 24px !important;        /* Ger rejält med luft inuti kortet */
+    margin-bottom: 12px !important;       /* Avstånd till nästa kort om du har flera recept */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05) !important; /* Mjuk, proffsig skugga */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* När man håller musen över kortet så lyfter det lite snyggt */
 .recipe-list li:hover {
-    background-color: #f5f3ef !important;
+    background-color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08) !important;
 }
 
-/* Rejäla och mörka receptlänkar i Helvetica Neue Bold */
+/* Stor, mörk och tydlig text i Helvetica Neue Bold */
 .recipe-list a {
     color: #29251f !important;
     text-decoration: none !important;
     font-family: "Helvetica Neue", Arial, sans-serif !important;
     font-weight: bold !important;
-    font-size: 20px !important; /* Stor, tydlig och snygg text! */
-    display: block !important; /* Gör att hela raden blir klickbar */
+    font-size: 20px !important; /* Rejäl storlek på texten */
+    display: block !important;   /* Gör att hela det vita kortet går att klicka på */
 }
 
-/* Gör "← Tillbaka"-länken till en snygg, rund vit knapp */
-a[href="../"], a[href="./"], .back, a:has(text*="Tillbaka") {
+/* "← Tillbaka"-knappen */
+a[href="../"], a[href="./"], .back {
     display: inline-block;
     background-color: #ffffff !important;
     color: #29251f !important;
@@ -58,10 +67,9 @@ a[href="../"], a[href="./"], .back, a:has(text*="Tillbaka") {
     box-shadow: 0 2px 6px rgba(0,0,0,0.05) !important;
     text-decoration: none !important;
     margin-bottom: 20px;
-    transition: transform 0.2s, background-color 0.2s;
+    transition: transform 0.2s;
 }
 
-a[href="../"]:hover, a[href="./"]:hover, .back:hover {
+a[href="../"]:hover, .back:hover {
     transform: translateY(-2px);
-    background-color: #fcfbfa !important;
 }
