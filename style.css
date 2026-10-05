@@ -73,3 +73,14 @@ a[href="../"], a[href="./"], .back {
 a[href="../"]:hover, .back:hover {
     transform: translateY(-2px);
 }
+/* 
+   -------------------------------------------------
+   ⭐ SPARA STJÄRNORNA HÄR SÅ DU KAN KOPIERA DEM ⭐
+   -------------------------------------------------
+   1 stjärna:  ⭐☆☆☆☆
+   2 stjärnor: ⭐⭐☆☆☆
+   3 stjärnor: ⭐⭐⭐☆☆
+   4 stjärnor: ⭐⭐⭐⭐⭐☆
+   5 stjärnor: ⭐⭐⭐⭐⭐⭐⭐
+   -------------------------------------------------
+*/
