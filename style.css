@@ -1,0 +1,14 @@
+/* Gör alla receptlänkar mörka och i Helvetica Neue Bold */
+a, .recipe-list a {
+    color: #29251f !important;
+    text-decoration: none !important;
+    font-family: "Helvetica Neue", Arial, sans-serif !important;
+    font-weight: bold !important;
+    font-size: 18px !important;
+}
+
+/* Tar bort den vita bakgrunden och ramar på alla sidor */
+.recipes-section, .container, body {
+    background: transparent !important;
+    box-shadow: none !important;
+}
