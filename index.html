@@ -1,185 +1,46 @@
 <!doctype html>
 <html lang="sv">
 <head>
-  <link rel="stylesheet" href="style.css">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Mina recept</title>
-
-<style>
-body{
-  margin:0;
-  background:#f3efe7;
-  color:#29251f;
-  font:16px/1.6 -apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif
-}
-
-.container{
-  max-width:1000px;
-  margin:0 auto;
-  padding:40px 20px
-}
-
-h1{
-  font:700 48px/1.1 Georgia,serif;
-  margin:0 0 40px;
-  text-align:center
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:24px;
-  margin-bottom:40px
-}
-
-.card{
-  background:#fff;
-  border-radius:16px;
-  padding:32px;
-  text-align:center;
-  box-shadow:0 4px 15px #0001;
-  transition:transform 0.2s,box-shadow 0.2s;
-  text-decoration:none;
-  color:inherit;
-  display:flex;
-  flex-direction:column;
-  justify-content:center
-}
-
-.card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 8px 25px #0002
-}
-
-.card-icon{
-  font-size:48px;
-  margin-bottom:16px
-}
-
-.card-title{
-  font:700 24px Georgia,serif;
-  margin:0
-}
-
-.card-count{
-  font-size:14px;
-  color:#655f55;
-  margin-top:8px
-}
-
-.recipes-section{
-  background:#fff;
-  border-radius:16px;
-  padding:40px;
-  box-shadow:0 4px 15px #0001
-}
-
-.recipes-section h2{
-  font:700 28px Georgia,serif;
-  margin:0 0 24px;
-  border-bottom:2px solid #ddd5c8;
-  padding-bottom:12px
-}
-
-.recipe-list{
-  list-style:none;
-  padding:0;
-  margin:0
-}
-
-.recipe-list li{
-  margin:16px 0
-}
-
-.recipe-list a{
-  color:#0066cc;
-  text-decoration:none;
-  font-size:18px
-}
-
-.recipe-list a:hover{
-  text-decoration:underline
-}
-
-.recipe-source{
-  font-size:12px;
-  color:#999;
-  margin-left:8px
-}
-
-@media(max-width:700px){
-  .container{
-    padding:20px 16px
-  }
-
-  h1{
-    font-size:36px;
-    margin-bottom:30px
-  }
-
-  .grid{
-    grid-template-columns:1fr;
-    gap:16px
-  }
-
-  .recipes-section{
-    padding:20px
-  }
-}
-</style>
+    <!-- Den här raden styr hela sidans sandgula bakgrund och snygga marginaler -->
+    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Mina recept</title>
 </head>
-
 <body>
 
 <div class="container">
 
-<h1>Mina recept</h1>
+    <h1>Mina recept</h1>
 
-<div class="grid">
+    <div class="grid">
 
-  <a href="kyckling/" class="card">
-    <div class="card-icon">🍗</div>
-    <div class="card-title">Kyckling</div>
-    <div class="card-count">1 recept</div>
-  </a>
+        <a href="kyckling/" class="card">
+            <div class="card-icon">🍗</div>
+            <div class="card-title">Kyckling</div>
+        </a>
 
-  <a href="kottfars/" class="card">
-    <div class="card-icon">🍲</div>
-    <div class="card-title">Köttfärs</div>
-    <div class="card-count">2 recept</div>
-  </a>
+        <a href="kottfars/" class="card">
+            <div class="card-icon">🍲</div>
+            <div class="card-title">Köttfärs</div>
+        </a>
 
-  <a href="fisk/" class="card">
-    <div class="card-icon">🐟</div>
-    <div class="card-title">Fisk</div>
-    <div class="card-count">1 recept</div>
-  </a>
+        <a href="fisk/" class="card">
+            <div class="card-icon">🐟</div>
+            <div class="card-title">Fisk</div>
+        </a>
 
-  <a href="pasta/" class="card">
-    <div class="card-icon">🍝</div>
-    <div class="card-title">Pasta</div>
-    <div class="card-count">0 recept</div>
-  </a>
+        <a href="pasta/" class="card">
+            <div class="card-icon">🍝</div>
+            <div class="card-title">Pasta</div>
+        </a>
 
-  <a href="soppa/" class="card">
-    <div class="card-icon">🍲</div>
-    <div class="card-title">Soppa</div>
-    <div class="card-count">1 recept</div>
-  </a>
+        <a href="soppa/" class="card">
+            <div class="card-icon">🍲</div>
+            <div class="card-title">Soppa</div>
+        </a>
 
-</div>
-
-<div class="recipes-section">
-  <h2>Alla mina recept</h2>
-  <ul class="recipe-list">
-    <li><a href="kyckling/kyckling-teriyaki-pak-choi.html">Kyckling teriyaki med pak choi sallad</a></li>
-    <li><a href="kottfars/grekiska-farsbiffar-feta.html">Grekiska färsbiffar med feta</a></li>
-    <li><a href="kottfars/thai-kycklingfars-jasminris.html">Thailändsk kycklingfärs med jasminris</a></li>
-    <li><a href="fisk/torsk-fankals-sas.html">Torsk i fänkålssås</a></li>
-    <li><a href="soppa/potatissoppa.html">Potatis- och purjolökssoppa</a></li>
-  </ul>
-</div>
+    </div>
 
 </div>
 
