@@ -38,7 +38,7 @@ h1{
   border-radius:16px;
   padding:32px;
   text-align:center;
-  box-shadow:0 4px 15px #0001;
+  box-shadow:0 4px 15px #0001
   transition:transform 0.2s,box-shadow 0.2s;
   text-decoration:none;
   color:inherit;
@@ -102,12 +102,6 @@ h1{
   text-decoration:underline
 }
 
-.recipe-source{
-  font-size:12px;
-  color:#999;
-  margin-left:8px
-}
-
 @media(max-width:700px){
   .container{
     padding:20px 16px
@@ -138,50 +132,82 @@ h1{
 
 <div class="grid">
 
+  <!-- ID-taggarna nedanför (id="count-...") talar om för vårt script vart räknaren ska skrivas ut -->
   <a href="kyckling/" class="card">
     <div class="card-icon">🍗</div>
     <div class="card-title">Kyckling</div>
-    <div class="card-count">2 recept</div>
+    <div id="count-kyckling" class="card-count">Laddar...</div>
   </a>
 
   <a href="kottfars/" class="card">
     <div class="card-icon">🍲</div>
     <div class="card-title">Köttfärs</div>
-    <div class="card-count">1 recept</div>
+    <div id="count-kottfars" class="card-count">Laddar...</div>
   </a>
 
   <a href="fisk/" class="card">
     <div class="card-icon">🐟</div>
     <div class="card-title">Fisk</div>
-    <div class="card-count">1 recept</div>
+    <div id="count-fisk" class="card-count">Laddar...</div>
   </a>
 
   <a href="pasta/" class="card">
     <div class="card-icon">🍝</div>
     <div class="card-title">Pasta</div>
-    <div class="card-count">0 recept</div>
+    <div id="count-pasta" class="card-count">Laddar...</div>
   </a>
 
   <a href="soppa/" class="card">
     <div class="card-icon">🍲</div>
     <div class="card-title">Soppa</div>
-    <div class="card-count">1 recept</div>
+    <div id="count-soppa" class="card-count">Laddar...</div>
   </a>
 
 </div>
 
+<!-- Den här listan gömmer vi inte, utan scriptet använder den för att räkna antalet rader! -->
 <div class="recipes-section">
   <h2>Alla mina recept</h2>
-  <ul class="recipe-list">
+  <ul id="main-recipe-list" class="recipe-list">
     <li><a href="kyckling/kyckling-teriyaki-pak-choi.html">Kyckling teriyaki med pak choi sallad</a></li>
+    <li><a href="kyckling/thai-kycklingfars-jasminris.html">Thailändsk kycklingfärs med jasminris</a></li>
     <li><a href="kottfars/grekiska-farsbiffar-feta.html">Grekiska färsbiffar med feta</a></li>
-    <li><a href="kottfars/thai-kycklingfars-jasminris.html">Thailändsk kycklingfärs med jasminris</a></li>
     <li><a href="fisk/torsk-fankals-sas.html">Torsk i fänkålssås</a></li>
     <li><a href="soppa/potatissoppa.html">Potatis- och purjolökssoppa</a></li>
   </ul>
 </div>
 
 </div>
+
+<!-- Det här är det osynliga scriptet som gör hela räkne-jobbet automatiskt -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // 1. Skapa en tom räknare för varje kategori
+    const counts = { kyckling: 0, kottfars: 0, fisk: 0, pasta: 0, soppa: 0 };
+    
+    // 2. Hämta alla länkar i den stora receptlistan längst ner
+    const recipeLinks = document.querySelectorAll("#main-recipe-list a");
+    
+    // 3. Gå igenom varje länk och se vilken mapp den pekar på
+    recipeLinks.forEach(link => {
+      const href = link.getAttribute("href");
+      
+      if (href.startsWith("kyckling/")) counts.kyckling++;
+      else if (href.startsWith("kottfars/")) counts.kottfars++;
+      else if (href.startsWith("fisk/")) counts.fisk++;
+      else if (href.startsWith("pasta/")) counts.pasta++;
+      else if (href.startsWith("soppa/")) counts.soppa++;
+    });
+    
+    // 4. Skriv ut de korrekta, automatiska siffrorna i dina fina boxar
+    for (const kategori in counts) {
+      const element = document.getElementById("count-" + kategori);
+      if (element) {
+        element.textContent = counts[kategori] + " recept";
+      }
+    }
+  });
+</script>
 
 </body>
 </html>
