@@ -1,3 +1,9 @@
+body {
+    background-color: #f3efe7 !important;
+    margin: 0;
+    padding: 40px 20px !important; /* Ger 40px marginal i topp/botten och 20px från sidorna */
+}
+
 /* Gör alla receptlänkar mörka och i Helvetica Neue Bold */
 a, .recipe-list a {
     color: #29251f !important;
@@ -7,8 +13,9 @@ a, .recipe-list a {
     font-size: 18px !important;
 }
 
-/* Tar bort den vita bakgrunden och ramar på alla sidor */
-.recipes-section, .container, body {
+/* Tar bort vita bakgrunder och skuggor på boxar */
+.recipes-section, .container {
     background: transparent !important;
     box-shadow: none !important;
+    padding: 0 !important;
 }
