@@ -16,41 +16,46 @@ body{
   margin:40px auto;
   padding:0 20px
 }
-h1{
-  font:700 42px/1.1 Georgia,serif;
-  margin:0 0 24px
-}
-.back-link{
+.back{
   display:inline-block;
-  margin-bottom:24px;
-  color:#0066cc;
-  text-decoration:none
+  margin-bottom:32px;
+  font-size:14px;
+  color:#29251f;
+  text-decoration:none;
+  font-weight:500
 }
-.back-link:hover{
-  text-decoration:underline
+.back:hover{
+  color:#655f55
 }
-.card{
-  background:#fff;
-  border-radius:16px;
-  padding:32px;
-  margin-bottom:16px;
-  box-shadow:0 4px 15px #0001
+h1{
+  font:700 42px/1.2 -apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;
+  margin:0 0 32px;
+  color:#29251f
+}
+.recipe{
+  margin-bottom:24px
 }
 .recipe-title{
-  font:700 22px Georgia,serif;
-  margin:0;
+  font:600 18px -apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;
+  margin:0 0 8px;
   color:#29251f
 }
 .recipe-link{
-  color:#0066cc;
-  text-decoration:none
+  color:#29251f;
+  text-decoration:none;
+  border-bottom:1px solid #29251f;
+  font-weight:500
 }
 .recipe-link:hover{
-  text-decoration:underline
+  color:#655f55;
+  border-bottom-color:#655f55
 }
-.recipe-source{
-  font-size:14px;
-  color:#999;
+.recipe-desc{
+  background:#fff;
+  padding:16px 20px;
+  border-radius:12px;
+  font-size:15px;
+  color:#655f55;
   margin-top:8px
 }
 </style>
@@ -59,13 +64,15 @@ h1{
 
 <div class="container">
 
-<a href="../" class="back-link">← Tillbaka till alla kategorier</a>
+<a href="../" class="back">← Tillbaka</a>
 
 <h1>🍲 Soppa</h1>
 
-<div class="card">
-  <h2 class="recipe-title"><a href="potatissoppa.html" class="recipe-link">Potatis- och purjolökssoppa</a></h2>
-  <p>En klassisk, varm och bekväm soppa.</p>
+<div class="recipe">
+  <div class="recipe-title">
+    <a href="potatissoppa.html" class="recipe-link">Potatis- och purjolökssoppa</a>
+  </div>
+  <div class="recipe-desc">En klassisk, varm och bekväm soppa.</div>
 </div>
 
 </div>
